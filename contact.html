@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta lang="en">
+    </head>
+    <header>
+        <h1>Contact Form</h1>
+        <nav>
+            <a href="index.html">Home</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="about.html">About</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="projects.html">Projects</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="contact.html">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        </nav>
+    </header>
+
+    <body>
+        <main>
+        <form action="mailto:besimonmutunga@gmail.com" method="post"> <!--Could have used "action = "#" as placeholder"-->
+            <fieldset>
+                <legend>Reach Out</legend>
+                <label for="name">Name:</label>
+                <input id="name" name="name" required/><br><br>
+
+                <label for="email">Email:</label>
+                <input id="email" name="email" required/><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea name="message" id="message" rows="5" cols="30" required></textarea><br><br>
+
+                <button type="submit">Send</button>
+
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <p>Get in touch</p>
+    </footer>
+    </body>
+    
+</html>
