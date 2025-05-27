@@ -2,42 +2,131 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta lang="en">
         <title>Contact Me</title>
+        <link rel="stylesheet" href="/styles/index.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0 20px;
+                background-color: #f4f4f4;
+            }
+
+            header {
+                background-color: #0056b3;
+                color: white;
+                padding: 20px 0;
+                text-align: center;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+            main {
+                max-width: 600px;
+                margin: 30px auto;
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+
+            fieldset {
+                border: 1px solid #ccc;
+                padding: 20px;
+                border-radius: 5px;
+            }
+
+            legend {
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #333;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            input, textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            button {
+                padding: 10px 20px;
+                background-color: #0056b3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #004099;
+            }
+
+            footer {
+                text-align: center;
+                padding: 15px;
+                background-color: #eee;
+                margin-top: 20px;
+            }
+        </style>
     </head>
-    <header>
-        <h1>Contact Form</h1>
-        <nav>
-            <a href="../index.html">Home</a> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="about.html">About</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="projects.html">Projects</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="contact.html">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        </nav>
-    </header>
 
     <body>
+        <header>
+            <h1>Contact Form</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
         <main>
-        <form action="mailto:besimonmutunga@gmail.com" method="post"> <!--Could have used "action = "#" as placeholder"-->
-            <fieldset>
-                <legend>Reach Out</legend>
-                <label for="name">Name:</label>
-                <input id="name" name="name" required/><br><br>
+    <form action="mailto:besimonmutunga@gmail.com" method="post">
+        <fieldset>
+            <legend>Reach Out</legend>
 
-                <label for="email">Email:</label>
-                <input id="email" name="email" required/><br><br>
+            <label for="name">Name:</label>
+            <input id="name" name="name" required />
 
-                <label for="message">Message:</label><br>
-                <textarea name="message" id="message" rows="5" cols="30" required></textarea><br><br>
+            <label for="email">Email:</label>
+            <input id="email" name="email" required type="email"/>
 
-                <button type="submit">Send</button>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
 
-            </fieldset>
-        </form>
-    </main>
-    <footer>
-        <p>Get in touch</p>
-    </footer>
+            <button type="submit">Send</button>
+        </fieldset>
+    </form>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="tel:+254706085240">
+            <button style="background-color: #28a745;">📞 Call Me</button>
+        </a>
+    </div>
+</main>
+
+        <footer>
+            <p>Get in touch</p>
+        </footer>
     </body>
-    
 </html>

@@ -1,0 +1,99 @@
+/* Base Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #004d99;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 8px;
+}
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+section {
+    margin-bottom: 40px;
+}
+h2 {
+    margin-bottom: 10px;
+    color: #004d99;
+}
+p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Image */
+figure {
+    margin-top: 15px;
+    text-align: center;
+}
+figure img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+figcaption {
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Video */
+iframe {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+}
