@@ -1,72 +1,379 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Simon Mutunga Mavindu</title>
-        <link rel="stylesheet" href="./styles/index.css">
-    </head>
-    <body>
-        <header>
-            <h1>Simon Mutunga Mavindu</h1>
-            <nav>
-            <a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="./html/about.html">About</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="./html/projects.html">Projects</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="./html/contact.html">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </nav>
-        </header>
-        <main>
-            <section>
-                <h2>Geospatial Engineer | Software development Enthusiast</h2>
-                <p>Hello! Simon here.This is my portfolio built on  HTML & CSS</p>
-                <figure>
-                    <img src="./assets/for dl.jpg"alt="My photo" width="200">
-                    <figcaption>That's Me!</figcaption>
-                </figure>
-            </section>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Mutunga | Geospatial Engineer</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Coordinate Grid Overlay -->
+    <div class="grid-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <span class="coord">-1.2921° S</span>
+            <span class="coord">36.8219° E</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
 
-            <section>
-                <h2>Video Introduction - To be added</h2>
-                <iframe 
-                src="" 
-                frameborder="10"
-                width = "300"
-                height="200"
-                title="Little portfolio Intro"
-                allowfullscreen></iframe>
-            </section>
-        </main>
-        <footer>
-    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px;">
-        <a href="mailto:besimonmutunga@gmail.com" style="text-decoration: none;">
-            <button style="
-                background-color: #007BFF;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                font-size: 1em;
-                cursor: pointer;
-                transition: background-color 0.3s ease;">
-                ✉️ Email Me
-            </button>
-        </a>
-        <a href="tel:+254706085240" style="text-decoration: none;">
-            <button style="
-                background-color: #28a745;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                font-size: 1em;
-                cursor: pointer;
-                transition: background-color 0.3s ease;">
-                📞 Call Me
-            </button>
-        </a>
-    </div>
-    <p>&copy; 2025 Simon Mutunga</p>
-</footer>   
-    </body>
+    <!-- Hero Section with Globe -->
+    <section id="home" class="hero">
+        <div id="globe-container"></div>
+        <div class="hero-content">
+            <p class="hero-tag">GEOSPATIAL ENGINEER</p>
+            <h1 class="hero-title">Simon<br>Mutunga</h1>
+            <p class="hero-description">Mapping solutions. Building systems.<br>Based in Nairobi, Kenya.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <h2 class="section-title">About</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="lead">I am a Geospatial Engineer currently living in Nairobi with experience in Surveying, Geographic Information Systems, Python and Javascript.</p>
+                <p>I have diverse tech skills and am highly adaptable. I love trying new things in the name of automation. Currently, my goals are solving problems and realizing new opportunities in business and society—especially health.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Geospatial</h3>
+                    <ul>
+                        <li>GIS & Mapping</li>
+                        <li>Topographic Surveys</li>
+                        <li>Cadastral Surveys</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Javascript</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data</h3>
+                    <ul>
+                        <li>Database Design</li>
+                        <li>Data Analysis</li>
+                        <li>Visualization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="section-header">
+            <span class="section-number">02</span>
+            <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="project-year">2024</div>
+                <h3 class="project-title">Suitability Analysis using AHP</h3>
+                <p class="project-type">Data Analysis & Mapping</p>
+                <p class="project-desc">AHP tool implementation in ArcGIS Desktop for multi-criteria decision analysis and site suitability mapping.</p>
+                <div class="project-footer">
+                    <span class="project-status completed">Completed</span>
+                    <a href="https://github.com/Issimonmutunga/AHP-Project" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-year">2025</div>
+                <h3 class="project-title">GIS Web Application</h3>
+                <p class="project-type">Projections, Visualization, ML</p>
+                <p class="project-desc">Interactive web-based GIS platform with projection transformations, data visualization, and machine learning integration.</p>
+                <div class="project-footer">
+                    <span class="project-status ongoing">Ongoing</span>
+                    <a href="https://github.com/Issimonmutunga/geospatial-visualization-app" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-year">2025</div>
+                <h3 class="project-title">Health Appointment App</h3>
+                <p class="project-type">Mobile App Development</p>
+                <p class="project-desc">Mobile application for streamlined appointment booking in healthcare settings.</p>
+                <div class="project-footer">
+                    <span class="project-status ongoing">Ongoing</span>
+                    <a href="https://github.com/Issimonmutunga/health" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="section-header">
+            <span class="section-number">03</span>
+            <h2 class="section-title">Contact</h2>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p class="contact-lead">Let's work together on your next geospatial project.</p>
+                <div class="contact-methods">
+                    <a href="mailto:besimonmutunga@gmail.com" class="contact-method">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">besimonmutunga@gmail.com</span>
+                    </a>
+                    <a href="tel:+254706085240" class="contact-method">
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">+254 706 085 240</span>
+                    </a>
+                    <div class="contact-method">
+                        <span class="contact-label">Location</span>
+                        <span class="contact-value">Nairobi, Kenya</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" action="mailto:besimonmutunga@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-coords">
+                <span>1°17'31.6"S 36°49'18.8"E</span>
+            </div>
+            <div class="footer-copy">
+                <span>© 2025 Simon Mutunga</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Issimonmutunga" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Globe Animation
+        const container = document.getElementById('globe-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        // Create dot-matrix globe
+        const globeRadius = 5;
+        const dotGeometry = new THREE.BufferGeometry();
+        const dotCount = 15000;
+        const positions = [];
+        const colors = [];
+
+        // Generate dots on sphere surface (land approximation)
+        for (let i = 0; i < dotCount; i++) {
+            const phi = Math.acos(-1 + (2 * i) / dotCount);
+            const theta = Math.sqrt(dotCount * Math.PI) * phi;
+            
+            const x = globeRadius * Math.cos(theta) * Math.sin(phi);
+            const y = globeRadius * Math.sin(theta) * Math.sin(phi);
+            const z = globeRadius * Math.cos(phi);
+            
+            positions.push(x, y, z);
+            
+            // Color variation - teal to cyan
+            const intensity = 0.3 + Math.random() * 0.7;
+            colors.push(0.2 * intensity, 0.8 * intensity, 0.7 * intensity);
+        }
+
+        dotGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+        dotGeometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+        const dotMaterial = new THREE.PointsMaterial({
+            size: 0.04,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.8,
+            sizeAttenuation: true
+        });
+
+        const globe = new THREE.Points(dotGeometry, dotMaterial);
+        scene.add(globe);
+
+        // Add wireframe sphere
+        const wireGeometry = new THREE.SphereGeometry(globeRadius * 1.01, 36, 18);
+        const wireMaterial = new THREE.MeshBasicMaterial({
+            color: 0x1a3a3a,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.15
+        });
+        const wireframe = new THREE.Mesh(wireGeometry, wireMaterial);
+        scene.add(wireframe);
+
+        // Add glow ring
+        const ringGeometry = new THREE.RingGeometry(globeRadius * 1.2, globeRadius * 1.25, 64);
+        const ringMaterial = new THREE.MeshBasicMaterial({
+            color: 0x2dd4bf,
+            transparent: true,
+            opacity: 0.3,
+            side: THREE.DoubleSide
+        });
+        const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+        ring.rotation.x = Math.PI / 2;
+        scene.add(ring);
+
+        // Nairobi marker
+        const nairobiLat = -1.2921 * (Math.PI / 180);
+        const nairobiLon = 36.8219 * (Math.PI / 180);
+        const markerGeometry = new THREE.SphereGeometry(0.08, 16, 16);
+        const markerMaterial = new THREE.MeshBasicMaterial({ color: 0x2dd4bf });
+        const marker = new THREE.Mesh(markerGeometry, markerMaterial);
+        
+        const markerX = globeRadius * Math.cos(nairobiLat) * Math.cos(nairobiLon);
+        const markerY = globeRadius * Math.sin(nairobiLat);
+        const markerZ = globeRadius * Math.cos(nairobiLat) * Math.sin(nairobiLon);
+        marker.position.set(markerX, markerY, markerZ);
+        globe.add(marker);
+
+        // Pulse ring around marker
+        const pulseGeometry = new THREE.RingGeometry(0.1, 0.15, 32);
+        const pulseMaterial = new THREE.MeshBasicMaterial({
+            color: 0x2dd4bf,
+            transparent: true,
+            opacity: 0.6,
+            side: THREE.DoubleSide
+        });
+        const pulse = new THREE.Mesh(pulseGeometry, pulseMaterial);
+        pulse.position.copy(marker.position);
+        pulse.lookAt(0, 0, 0);
+        globe.add(pulse);
+
+        camera.position.z = 12;
+
+        // Mouse interaction
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetRotationX = 0;
+        let targetRotationY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = (e.clientY / window.innerHeight) * 2 - 1;
+        });
+
+        // Animation
+        let pulseScale = 1;
+        let pulseDirection = 1;
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Auto rotation
+            globe.rotation.y += 0.002;
+            wireframe.rotation.y += 0.002;
+
+            // Mouse influence
+            targetRotationX = mouseY * 0.3;
+            targetRotationY = mouseX * 0.5;
+            globe.rotation.x += (targetRotationX - globe.rotation.x) * 0.05;
+            wireframe.rotation.x = globe.rotation.x;
+
+            // Pulse animation
+            pulseScale += 0.02 * pulseDirection;
+            if (pulseScale > 2) pulseDirection = -1;
+            if (pulseScale < 1) {
+                pulseDirection = 1;
+                pulseScale = 1;
+            }
+            pulse.scale.set(pulseScale, pulseScale, 1);
+            pulseMaterial.opacity = 0.6 * (1 - (pulseScale - 1));
+
+            // Ring rotation
+            ring.rotation.z += 0.001;
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Nav active state
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
