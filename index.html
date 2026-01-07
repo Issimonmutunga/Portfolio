@@ -7,373 +7,240 @@
     <link rel="stylesheet" href="styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Coordinate Grid Overlay -->
-    <div class="grid-overlay"></div>
-    
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-logo">
-            <span class="coord">-1.2921° S</span>
-            <span class="coord">36.8219° E</span>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-coords">-1.2921° S, 36.8219° E</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+            <div class="loader-text">Brewing your experience...</div>
         </div>
+    </div>
+    <div class="grid-overlay"></div>
+    <nav class="nav" id="nav">
+        <div class="nav-logo"><span class="logo-text">SM</span><span class="logo-dot"></span></div>
         <div class="nav-links">
             <a href="#home" class="nav-link active">Home</a>
             <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
+        <div class="nav-controls">
+            <button class="zoom-btn" id="zoomIn" title="Zoom In">+</button>
+            <button class="zoom-btn" id="zoomOut" title="Zoom Out">−</button>
+        </div>
     </nav>
 
-    <!-- Hero Section with Globe -->
     <section id="home" class="hero">
-        <div id="globe-container"></div>
+        <div id="scene-container"></div>
         <div class="hero-content">
-            <p class="hero-tag">GEOSPATIAL ENGINEER</p>
+            <div class="hero-badge"><span class="badge-dot"></span><span>Available for opportunities</span></div>
+            <p class="hero-tag">GEOSPATIAL ENGINEER & PYTHON DEVELOPER</p>
             <h1 class="hero-title">Simon<br>Mutunga</h1>
-            <p class="hero-description">Mapping solutions. Building systems.<br>Based in Nairobi, Kenya.</p>
+            <p class="hero-description">Transforming complex datasets into reliable,<br>actionable geospatial solutions.</p>
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#projects" class="btn btn-primary"><span>View Projects</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
                 <a href="#contact" class="btn btn-secondary">Get in Touch</a>
             </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-value">3+</span><span class="stat-label">Years Experience</span></div>
+                <div class="stat"><span class="stat-value">5+</span><span class="stat-label">Projects</span></div>
+                <div class="stat"><span class="stat-value">UoN</span><span class="stat-label">BSc. Geospatial</span></div>
+            </div>
         </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
+        <div class="scroll-indicator"><div class="mouse"><div class="wheel"></div></div><span>Scroll to explore</span></div>
+        <div class="scene-hint"><span>🖱️ Drag to rotate • Scroll to zoom</span></div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section about">
-        <div class="section-header">
-            <span class="section-number">01</span>
-            <h2 class="section-title">About</h2>
-        </div>
-        <div class="about-content">
-            <div class="about-text">
-                <p class="lead">I am a Geospatial Engineer currently living in Nairobi with experience in Surveying, Geographic Information Systems, Python and Javascript.</p>
-                <p>I have diverse tech skills and am highly adaptable. I love trying new things in the name of automation. Currently, my goals are solving problems and realizing new opportunities in business and society—especially health.</p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Geospatial</h3>
-                    <ul>
-                        <li>GIS & Mapping</li>
-                        <li>Topographic Surveys</li>
-                        <li>Cadastral Surveys</li>
-                    </ul>
+        <div class="section-container">
+            <div class="section-header"><span class="section-number">01</span><h2 class="section-title">About Me</h2><div class="section-line"></div></div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame"><img src="assets/profile.jpeg" alt="Simon Mutunga" /><div class="image-overlay"></div></div>
+                    <div class="image-coords"><span>1°17'31.6"S</span><span>36°49'18.8"E</span></div>
                 </div>
-                <div class="skill-category">
-                    <h3>Development</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>Javascript</li>
-                        <li>SQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Data</h3>
-                    <ul>
-                        <li>Database Design</li>
-                        <li>Data Analysis</li>
-                        <li>Visualization</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section projects">
-        <div class="section-header">
-            <span class="section-number">02</span>
-            <h2 class="section-title">Projects</h2>
-        </div>
-        <div class="projects-grid">
-            <article class="project-card">
-                <div class="project-year">2024</div>
-                <h3 class="project-title">Suitability Analysis using AHP</h3>
-                <p class="project-type">Data Analysis & Mapping</p>
-                <p class="project-desc">AHP tool implementation in ArcGIS Desktop for multi-criteria decision analysis and site suitability mapping.</p>
-                <div class="project-footer">
-                    <span class="project-status completed">Completed</span>
-                    <a href="https://github.com/Issimonmutunga/AHP-Project" target="_blank" class="project-link">
-                        View on GitHub →
-                    </a>
-                </div>
-            </article>
-            <article class="project-card">
-                <div class="project-year">2025</div>
-                <h3 class="project-title">GIS Web Application</h3>
-                <p class="project-type">Projections, Visualization, ML</p>
-                <p class="project-desc">Interactive web-based GIS platform with projection transformations, data visualization, and machine learning integration.</p>
-                <div class="project-footer">
-                    <span class="project-status ongoing">Ongoing</span>
-                    <a href="https://github.com/Issimonmutunga/geospatial-visualization-app" target="_blank" class="project-link">
-                        View on GitHub →
-                    </a>
-                </div>
-            </article>
-            <article class="project-card">
-                <div class="project-year">2025</div>
-                <h3 class="project-title">Health Appointment App</h3>
-                <p class="project-type">Mobile App Development</p>
-                <p class="project-desc">Mobile application for streamlined appointment booking in healthcare settings.</p>
-                <div class="project-footer">
-                    <span class="project-status ongoing">Ongoing</span>
-                    <a href="https://github.com/Issimonmutunga/health" target="_blank" class="project-link">
-                        View on GitHub →
-                    </a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="section-header">
-            <span class="section-number">03</span>
-            <h2 class="section-title">Contact</h2>
-        </div>
-        <div class="contact-content">
-            <div class="contact-info">
-                <p class="contact-lead">Let's work together on your next geospatial project.</p>
-                <div class="contact-methods">
-                    <a href="mailto:besimonmutunga@gmail.com" class="contact-method">
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value">besimonmutunga@gmail.com</span>
-                    </a>
-                    <a href="tel:+254706085240" class="contact-method">
-                        <span class="contact-label">Phone</span>
-                        <span class="contact-value">+254 706 085 240</span>
-                    </a>
-                    <div class="contact-method">
-                        <span class="contact-label">Location</span>
-                        <span class="contact-value">Nairobi, Kenya</span>
+                <div class="about-text">
+                    <h3 class="about-headline">Geospatial Engineer crafting data-driven solutions from Nairobi</h3>
+                    <p class="lead">I'm a Geospatial Engineer and Python developer with hands-on experience in data automation, GIS analysis, and AI-assisted workflows.</p>
+                    <p>Skilled in building and refining scripts that transform complex datasets into reliable, actionable results. Adept at collaborating with intelligent systems and using tools like ArcGIS, QGIS, and Python libraries to streamline spatial and analytical tasks. Currently working on modeling complex relationships to derive insights.</p>
+                    <div class="about-details">
+                        <div class="detail"><span class="detail-label">Location</span><span class="detail-value">Nairobi, Kenya</span></div>
+                        <div class="detail"><span class="detail-label">Languages</span><span class="detail-value">English, Swahili</span></div>
+                        <div class="detail"><span class="detail-label">Education</span><span class="detail-value">BSc. Geospatial Engineering, UoN</span></div>
                     </div>
                 </div>
             </div>
-            <form class="contact-form" action="mailto:besimonmutunga@gmail.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="skills-section">
+                <h3 class="skills-heading">Technical Arsenal</h3>
+                <div class="skills-grid">
+                    <div class="skill-category"><div class="skill-icon">🗺️</div><h4>GIS & Remote Sensing</h4><ul><li>ArcGIS Desktop, Pro, Enterprise</li><li>QGIS</li><li>ERDAS</li><li>Google Earth Engine</li><li>ArcGIS Field Maps</li></ul></div>
+                    <div class="skill-category"><div class="skill-icon">💻</div><h4>Programming</h4><ul><li>Python</li><li>JavaScript</li><li>SQL</li><li>R</li></ul></div>
+                    <div class="skill-category"><div class="skill-icon">📐</div><h4>Surveying</h4><ul><li>Topographic Surveys</li><li>Cadastral Surveys</li><li>Engineering Surveys</li></ul></div>
+                    <div class="skill-category"><div class="skill-icon">🤝</div><h4>Soft Skills</h4><ul><li>Time Management</li><li>Problem Solving</li><li>Teamwork</li></ul></div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+            </div>
+            <div class="hobbies-section">
+                <h3 class="hobbies-heading">When I'm Not Mapping</h3>
+                <div class="hobbies-grid">
+                    <div class="hobby"><span class="hobby-icon">✈️</span><span class="hobby-name">Traveling</span></div>
+                    <div class="hobby"><span class="hobby-icon">🌳</span><span class="hobby-name">Tree Planting</span></div>
+                    <div class="hobby"><span class="hobby-icon">🔬</span><span class="hobby-name">Exploring New Tech</span></div>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-            </form>
+                <div class="favorite-quote"><span class="quote-label">Favorite Song</span><span class="quote-text">"Mind Over Matter"</span><span class="quote-author">— Young the Giant</span></div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="experience" class="section experience">
+        <div class="section-container">
+            <div class="section-header"><span class="section-number">02</span><h2 class="section-title">Experience</h2><div class="section-line"></div></div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-role"><h3>Geospatial Analyst</h3><span class="company">Ramani Geotech – Remote</span></div>
+                            <div class="timeline-meta"><span class="date">Jun 2025 – Nov 2025</span><span class="type">Part-time</span></div>
+                        </div>
+                        <ul class="timeline-tasks">
+                            <li>Developed Python scripts to process climate datasets and automate geospatial model inputs for the climate-risk platform</li>
+                            <li>Contributed to system design of data pipelines for spatial analysis and visualization</li>
+                            <li>Assisted in AI/NLP integration into the platform</li>
+                        </ul>
+                        <div class="timeline-tags"><span>Python</span><span>Climate Data</span><span>AI/NLP</span><span>Data Pipelines</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-role"><h3>GIS Intern / Data Analyst</h3><span class="company">Kenya Power and Lighting Company – Nairobi</span></div>
+                            <div class="timeline-meta"><span class="date">May 2023 – Feb 2025</span><span class="type">Full-time</span></div>
+                        </div>
+                        <ul class="timeline-tasks">
+                            <li>Used ArcGIS Field Maps to collect and update asset and infrastructure data</li>
+                            <li>Cleaned and validated data for migration using SQL and ArcGIS Enterprise</li>
+                            <li>Created visualizations and edited attribute data during cleanup</li>
+                        </ul>
+                        <div class="timeline-tags"><span>ArcGIS</span><span>SQL</span><span>Data Migration</span><span>Field Maps</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-role"><h3>Survey/GIS Attaché</h3><span class="company">Nairobi City Water and Sewerage Company – Nairobi</span></div>
+                            <div class="timeline-meta"><span class="date">Jul 2022 – Sep 2022</span><span class="type">Attachment</span></div>
+                        </div>
+                        <ul class="timeline-tasks">
+                            <li>Helped design manholes, level sewer pipes, and manage spatial databases</li>
+                            <li>Carried out topographic surveys and mapped data in ArcGIS Desktop</li>
+                        </ul>
+                        <div class="timeline-tags"><span>Surveying</span><span>ArcGIS Desktop</span><span>Infrastructure</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="education-section">
+                <h3 class="education-heading">Education</h3>
+                <div class="education-grid">
+                    <div class="education-card"><div class="edu-icon">🎓</div><div class="edu-content"><h4>Bachelor of Science in Geospatial Engineering</h4><span class="edu-school">University of Nairobi</span><span class="edu-date">Sept 2018 – Sept 2023</span><span class="edu-grade">Second Class Honors – Upper Division</span></div></div>
+                    <div class="education-card"><div class="edu-icon">📚</div><div class="edu-content"><h4>Kenya Certificate of Secondary Education</h4><span class="edu-school">Maseno School, Kisumu</span><span class="edu-date">Feb 2014 – Nov 2017</span><span class="edu-grade">Grade: A−</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects">
+        <div class="section-container">
+            <div class="section-header"><span class="section-number">03</span><h2 class="section-title">Projects</h2><div class="section-line"></div></div>
+            <div class="projects-grid">
+                <article class="project-card featured">
+                    <div class="project-badge">Featured</div>
+                    <div class="project-year">2025</div>
+                    <h3 class="project-title">Nairobi Flood Risk Map</h3>
+                    <p class="project-type">Web GIS • Risk Assessment • Uber H3</p>
+                    <p class="project-desc">Developed a street-level flood risk map of Nairobi using Uber's H3 hexagonal hierarchical spatial index. The system integrates multiple environmental factors, provides instant risk assessments for any location, and is accessible through a user-friendly web interface.</p>
+                    <div class="project-tech"><span>Python</span><span>H3</span><span>Web Mapping</span><span>Risk Analysis</span></div>
+                    <div class="project-footer"><span class="project-status completed">Completed</span></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-year">2024</div>
+                    <h3 class="project-title">Suitability Analysis Using AHP</h3>
+                    <p class="project-type">Data Analysis • Multi-Criteria Decision Making</p>
+                    <p class="project-desc">Mapped areas suitable for Duma wheat in Makueni County using Multi-Criteria Decision Making (MCDM). Integrated several spatial datasets and presented results to UoN's Geospatial Engineering Department.</p>
+                    <div class="project-tech"><span>ArcGIS</span><span>AHP</span><span>MCDM</span></div>
+                    <div class="project-footer"><span class="project-status completed">Completed</span><a href="https://github.com/Issimonmutunga/AHP-Project" target="_blank" class="project-link">GitHub →</a></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-year">2025</div>
+                    <h3 class="project-title">GIS Web Application</h3>
+                    <p class="project-type">Projections • Visualization • Machine Learning</p>
+                    <p class="project-desc">Interactive web-based GIS platform with projection transformations, data visualization, and machine learning integration for geospatial analysis.</p>
+                    <div class="project-tech"><span>JavaScript</span><span>Python</span><span>ML</span><span>WebGIS</span></div>
+                    <div class="project-footer"><span class="project-status ongoing">Ongoing</span><a href="https://github.com/Issimonmutunga/geospatial-visualization-app" target="_blank" class="project-link">GitHub →</a></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-year">2025</div>
+                    <h3 class="project-title">Health Appointment App</h3>
+                    <p class="project-type">Mobile App Development • Healthcare</p>
+                    <p class="project-desc">Mobile application for streamlined appointment booking in healthcare settings, improving patient-provider coordination.</p>
+                    <div class="project-tech"><span>Mobile Dev</span><span>Healthcare</span><span>UX</span></div>
+                    <div class="project-footer"><span class="project-status ongoing">Ongoing</span><a href="https://github.com/Issimonmutunga/health" target="_blank" class="project-link">GitHub →</a></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="section-container">
+            <div class="section-header"><span class="section-number">04</span><h2 class="section-title">Get in Touch</h2><div class="section-line"></div></div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-headline">Let's build something great together</h3>
+                    <p class="contact-text">Whether you have a geospatial challenge, need data automation expertise, or want to collaborate on an innovative project—I'd love to hear from you.</p>
+                    <div class="contact-methods">
+                        <a href="mailto:besimonmutunga@gmail.com" class="contact-method">
+                            <div class="method-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6L12 13L2 6"/></svg></div>
+                            <div class="method-details"><span class="method-label">Email</span><span class="method-value">besimonmutunga@gmail.com</span></div>
+                        </a>
+                        <a href="tel:+254706085240" class="contact-method">
+                            <div class="method-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+                            <div class="method-details"><span class="method-label">Phone</span><span class="method-value">+254 706 085 240</span></div>
+                        </a>
+                        <div class="contact-method">
+                            <div class="method-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                            <div class="method-details"><span class="method-label">Location</span><span class="method-value">Marurui, Nairobi, Kenya</span></div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Issimonmutunga" target="_blank" class="social-link" title="GitHub"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+                    </div>
+                </div>
+                <form class="contact-form" action="mailto:besimonmutunga@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-row">
+                        <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
+                        <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required></div>
+                    </div>
+                    <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="Project inquiry"></div>
+                    <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea></div>
+                    <button type="submit" class="btn btn-primary btn-full"><span>Send Message</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"/></svg></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-coords">
-                <span>1°17'31.6"S 36°49'18.8"E</span>
-            </div>
-            <div class="footer-copy">
-                <span>© 2025 Simon Mutunga</span>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/Issimonmutunga" target="_blank">GitHub</a>
-            </div>
+            <div class="footer-brand"><span class="footer-logo">SM</span><span class="footer-tagline">Mapping the future, one dataset at a time.</span></div>
+            <div class="footer-coords"><span class="coord-label">Current Base</span><span class="coord-value">1°17'31.6"S 36°49'18.8"E</span></div>
+            <div class="footer-bottom"><span>© 2025 Simon Mutunga. All rights reserved.</span><a href="https://github.com/Issimonmutunga" target="_blank">GitHub</a></div>
         </div>
     </footer>
 
-    <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        // Globe Animation
-        const container = document.getElementById('globe-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        container.appendChild(renderer.domElement);
-
-        // Create dot-matrix globe
-        const globeRadius = 5;
-        const dotGeometry = new THREE.BufferGeometry();
-        const dotCount = 15000;
-        const positions = [];
-        const colors = [];
-
-        // Generate dots on sphere surface (land approximation)
-        for (let i = 0; i < dotCount; i++) {
-            const phi = Math.acos(-1 + (2 * i) / dotCount);
-            const theta = Math.sqrt(dotCount * Math.PI) * phi;
-            
-            const x = globeRadius * Math.cos(theta) * Math.sin(phi);
-            const y = globeRadius * Math.sin(theta) * Math.sin(phi);
-            const z = globeRadius * Math.cos(phi);
-            
-            positions.push(x, y, z);
-            
-            // Color variation - teal to cyan
-            const intensity = 0.3 + Math.random() * 0.7;
-            colors.push(0.2 * intensity, 0.8 * intensity, 0.7 * intensity);
-        }
-
-        dotGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-        dotGeometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-
-        const dotMaterial = new THREE.PointsMaterial({
-            size: 0.04,
-            vertexColors: true,
-            transparent: true,
-            opacity: 0.8,
-            sizeAttenuation: true
-        });
-
-        const globe = new THREE.Points(dotGeometry, dotMaterial);
-        scene.add(globe);
-
-        // Add wireframe sphere
-        const wireGeometry = new THREE.SphereGeometry(globeRadius * 1.01, 36, 18);
-        const wireMaterial = new THREE.MeshBasicMaterial({
-            color: 0x1a3a3a,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.15
-        });
-        const wireframe = new THREE.Mesh(wireGeometry, wireMaterial);
-        scene.add(wireframe);
-
-        // Add glow ring
-        const ringGeometry = new THREE.RingGeometry(globeRadius * 1.2, globeRadius * 1.25, 64);
-        const ringMaterial = new THREE.MeshBasicMaterial({
-            color: 0x2dd4bf,
-            transparent: true,
-            opacity: 0.3,
-            side: THREE.DoubleSide
-        });
-        const ring = new THREE.Mesh(ringGeometry, ringMaterial);
-        ring.rotation.x = Math.PI / 2;
-        scene.add(ring);
-
-        // Nairobi marker
-        const nairobiLat = -1.2921 * (Math.PI / 180);
-        const nairobiLon = 36.8219 * (Math.PI / 180);
-        const markerGeometry = new THREE.SphereGeometry(0.08, 16, 16);
-        const markerMaterial = new THREE.MeshBasicMaterial({ color: 0x2dd4bf });
-        const marker = new THREE.Mesh(markerGeometry, markerMaterial);
-        
-        const markerX = globeRadius * Math.cos(nairobiLat) * Math.cos(nairobiLon);
-        const markerY = globeRadius * Math.sin(nairobiLat);
-        const markerZ = globeRadius * Math.cos(nairobiLat) * Math.sin(nairobiLon);
-        marker.position.set(markerX, markerY, markerZ);
-        globe.add(marker);
-
-        // Pulse ring around marker
-        const pulseGeometry = new THREE.RingGeometry(0.1, 0.15, 32);
-        const pulseMaterial = new THREE.MeshBasicMaterial({
-            color: 0x2dd4bf,
-            transparent: true,
-            opacity: 0.6,
-            side: THREE.DoubleSide
-        });
-        const pulse = new THREE.Mesh(pulseGeometry, pulseMaterial);
-        pulse.position.copy(marker.position);
-        pulse.lookAt(0, 0, 0);
-        globe.add(pulse);
-
-        camera.position.z = 12;
-
-        // Mouse interaction
-        let mouseX = 0;
-        let mouseY = 0;
-        let targetRotationX = 0;
-        let targetRotationY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-            mouseY = (e.clientY / window.innerHeight) * 2 - 1;
-        });
-
-        // Animation
-        let pulseScale = 1;
-        let pulseDirection = 1;
-
-        function animate() {
-            requestAnimationFrame(animate);
-
-            // Auto rotation
-            globe.rotation.y += 0.002;
-            wireframe.rotation.y += 0.002;
-
-            // Mouse influence
-            targetRotationX = mouseY * 0.3;
-            targetRotationY = mouseX * 0.5;
-            globe.rotation.x += (targetRotationX - globe.rotation.x) * 0.05;
-            wireframe.rotation.x = globe.rotation.x;
-
-            // Pulse animation
-            pulseScale += 0.02 * pulseDirection;
-            if (pulseScale > 2) pulseDirection = -1;
-            if (pulseScale < 1) {
-                pulseDirection = 1;
-                pulseScale = 1;
-            }
-            pulse.scale.set(pulseScale, pulseScale, 1);
-            pulseMaterial.opacity = 0.6 * (1 - (pulseScale - 1));
-
-            // Ring rotation
-            ring.rotation.z += 0.001;
-
-            renderer.render(scene, camera);
-        }
-
-        animate();
-
-        // Resize handler
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Nav active state
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 300) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <script src="scripts/scene.js"></script>
 </body>
 </html>
